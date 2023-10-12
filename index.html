@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+        <title>Nebula</title>
+        <style type="text/css">
+            *
+            {
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+                font-family:'poppins', sans-serif;
+                scroll-behavior:smooth;
+            }
+            body
+            {
+                min-height:100vh;
+                background: linear-gradient(#2b1055,#7597de);
+                overflow-x:hidden;
+            }
+            header
+            {
+                position:absolute;
+                top:0;
+                left:0;
+                width:100%;
+                padding: 30px 100px;
+                display:flex;
+                justify-content: space-between;
+                align-items:center ;
+
+            }
+            header .logo
+            {
+                color: #fff;
+                font-weight:700px;
+                text-decoration:none;
+                font-size:2em;
+                text-transform:uppercase;
+                letter-spacing:2px;
+
+            }
+            header ul
+            {
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                z-index:10000;
+            }
+            header ul li
+            {
+                list-style:none;
+                margin-left:20px;
+
+            }
+            header ul li a
+            {
+                text-decoration:none;
+                padding:6px 15px;
+                color: #fff;
+                
+            }
+            header ul li a:hover
+            {
+                background:#fff;
+                color:#2b1055;
+                border-radius:20px;
+            }
+            section
+            {
+                position:relative;
+                width:100%;
+                height:100vh;
+                padding:100px;
+                display:flex;
+                justify-content:center;
+                align-items: center;
+                overflow:hidden;
+            }
+            section::before
+            {
+                content:'';
+                position:absolute;
+                bottom:0;
+                width:100%;
+                height:100px;
+                background:linear-gradient(to top,#1c0522,transparent);
+                z-index: 1000;
+            }
+            section img
+            {
+                position:absolute;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+                object-fit:cover; 
+                pointer-events: none;
+            }
+            section img#moon
+            {
+                mix-blend-mode:screen;
+            }
+            
+            section img#mountains_front
+            {
+                z-index:10;
+            }
+            #text
+            {
+                position:absolute;
+                color:#fff;
+                white-space:nowrap;
+                font-size:7.5vw;
+                right:-100px;
+                z-index:9;
+                
+
+            }
+            #btn
+            {
+                text-decoration:none;
+                display:inline-block;
+                padding:8px 30px;
+                border-radius:40px;
+                background:#fff;
+                color:#2b1055;
+                font-size:1.5em;
+                z-index:9;
+                transform:translateY(100px);
+                opacity:0.8;
+
+            }
+            #btn:hover
+            {
+                background-color:transparent;
+                border:1px solid #2b1055;
+            }
+            .sec
+            {
+                position:relative;
+                padding:100px;
+                background:#1c0522;
+            }
+            .sec h2
+            {
+                font-size:3.5em;
+                margin-bottom:10px;
+                color:#fff;
+
+            }
+            .sec p
+            {
+                font-size:1em;
+                color:#fff;
+            }
+
+        </style>
+        </head>
+        <body>
+        <header>
+            <a href="#" class="logo">Nebula</a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="stars.png" id="stars">
+            <img src="moon.png" id="moon">
+            <img src="mountains_behind.png" id="mountains_behind">
+            <h2 id="text" >NEBULA</h2>
+            <button id="btn">Let's Get Started</button>
+            <img src="mountains_front.png" id="mountains_front">
+        </section>
+        <div class="sec">
+            <h2><u>About NEBULA</u></h2>
+            <h2>Nebula is a new startup idea....<br><br></h2>
+            <h2>Nebula is a dynamic startup registered as an MSME in August 2023.</h2>
+            <u><h2><u>Core Members of Nebula!</u></h2></u>
+            <h2>Sai Murali<br></h2>
+            <h2>Mohammad Ismail<br></h2>
+            <h2>Bhargav Pattanayak<br></h2>
+            <h2>Krishna Teja<br></h2>
+            <h2>Lokesh<br></h2>
+        </div>
+        <script>
+            let stars = document.getElementById('stars');
+            let moon = document.getElementById('moon');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front = document.getElementById('mountains_front');
+            let header = document.querySelector('header');
+            window.addEventListener('scroll',function(){
+
+            let value = window.scrollY;
+            stars.style.left = value *0.25 + 'px';
+            moon.style.top = value *1.05 + 'px';
+            mountains_behind.style.top = value *0.5 + 'px';
+            mountains_front.style.top = value *0 + 'px';
+            text.style.marginRight = value *2.5 + 'px';
+            text.style.marginTop = value *1.5 + 'px';
+            btn.style.marginTop= value *1.5 + 'px';
+            header.style.top = value*0.5 +'px';
+            });
+        </script>
+        </body>
+    </html>
+</DOCTYPE>
