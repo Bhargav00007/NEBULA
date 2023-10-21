@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Nebula Contact</title>
+            <link rel="stylesheet" href="master.css">
+            <style type="text/css">
+                *
+                {
+                    margin:0;
+                    padding:0;
+                    box-sizing: border-box;
+                    font-family:'poppins', sans-serif;
+                    scroll-behavior:smooth;
+                    
+                }
+                body
+                {
+                    min-height:100vh;
+                    background: linear-gradient(#2b1055,#7597de);
+                    
+                }
+                h2
+                {
+                    position:relative;
+                    display:flex;
+                    top:150px;
+                    justify-content:center;
+                    align-items:center;
+                    color:white;
+                    font-size:60px;
+                }
+                header
+            {
+                position:absolute;
+                top:0;
+                left:0;
+                width:100%;
+                padding: 30px 100px;
+                display:flex;
+                justify-content: space-between;
+                align-items:center ;
+
+            }
+            header .logo
+            {
+                color: #fff;
+                font-weight:700px;
+                text-decoration:none;
+                font-size:2em;
+                text-transform:uppercase;
+                letter-spacing:2px;
+
+            }
+            header ul
+            {
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                z-index:10000;
+            }
+            header ul li
+            {
+                list-style:none;
+                margin-left:20px;
+
+            }
+            header ul li a
+            {
+                text-decoration:none;
+                padding:6px 15px;
+                color: #fff;
+                
+            }
+            header ul li a:hover
+            {
+                background:#fff;
+                color:#2b1055;
+                border-radius:20px;
+            }
+            header ul li a.hover,
+            header ul li a.active
+            {
+                background:#fff;
+                color:#2b1055;
+                border-radius: 20px;
+            }
+            .contact{
+                position:relative;
+                top:150px;
+                margin:50px;
+                text-align: center;
+                font-size: 20px;
+                font-family:sans-serif;
+                color:white;
+                background-color:darkblue;
+                border-radius:25px;
+                margin:50px 500px;
+                padding: 50px 10px;
+                margin-bottom:150px;
+                
+            }
+            input{
+                position:relative;
+
+                margin:15px;
+                width:300px;
+                height:30px;
+                
+            }
+            button
+            {
+                width:100px;
+                height: 40px;
+                font-size: large;
+            }
+            section img
+            {
+                position:absolute;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%;
+                object-fit:cover; 
+                pointer-events: none;
+            }
+            </style>
+        </head>
+        <body>
+            <h2>Contact us</h2>
+            <header>
+                <a href="#" class="logo">Nebula</a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="NebulaShop.html">Shop</a></li>
+                    <li><a href="#" class="active">Contact</a></li>
+                </ul>
+            </header>
+            <section>
+            <img src="stars.png" id="stars">
+        </section>
+            <div class="contact">
+                Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input ><br>
+                Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input ><br>
+                Telephone:<input  type="tel"><br>
+                <button>Submit</button>
+            </div>
+            
+        </body>
+    </html>
