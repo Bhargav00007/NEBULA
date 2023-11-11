@@ -96,6 +96,7 @@
             }
             section img
             {
+                opacity: 5;
                 position:absolute;
                 top:0;
                 left:0;
@@ -104,22 +105,12 @@
                 object-fit:cover; 
                 pointer-events: none;
             }
-            section img#moon
-            {
-                mix-blend-mode:screen;
-            }
-            
-            section img#mountains_front
-            {
-                z-index:10;
-            }
             #text
             {
                 position:absolute;
                 color:#fff;
                 white-space:nowrap;
                 font-size:7.5vw;
-                /* right:-300px; */
                 z-index:9;
                 
                 
@@ -145,26 +136,117 @@
                 background-color:transparent;
                 border:1px solid #2b1055;
             }
-            .sec
-            {
-                position:relative;
-                padding:100px;
-                background:#1c0522;
+            .slider{
+                width: 2000px;
+                max-width: 100vw;
+                height: 300px;
+                margin: auto;
+                position: relative;
+                overflow: hidden;
             }
-            .sec h5
-            {
-                font-size:3.5em;
-                margin-bottom:10px;
-                color:#fff;
-                text-align:center;
+            .slider .list{
+                position: absolute;
+                width: max-content;
+                height: 100%;
+                left: 0;
+                top: 0;
+                display: flex;
+                transition: 1s;
+            }
+            .slider .list img{
+                width: 2000px;
+                max-width: 100vw;
+                height: 100%;
+                object-fit: cover;
+            }
+            .slider .buttons{
+                position: absolute;
+                top: 45%;
+                left: 5%;
+                width: 90%;
+                display: flex;
+                justify-content: space-between;
+            }
+            .slider .buttons button{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: #fff5;
+                color: #fff;
+                border: none;
+                font-family: monospace;
+                font-weight: bold;
+            }
+            .slider .dots{
+                position: absolute;
+                bottom: 10px;
+                left: 0;
+                color: #fff;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+            }
+            .slider .dots li{
+                list-style: none;
+                width: 10px;
+                height: 10px;
+                background-color: #fff;
+                margin: 10px;
+                border-radius: 20px;
+                transition: 0.5s;
+            }
+            .slider .dots li.active{
+                width: 30px;
+            }
+            @media screen and (max-width: 768px){
+                .slider{
+                    height: 400px;
+                }
+            }
+            .item{
+                width:2000px;
+                height:300px;
+            }
+            .product{
+                margin-top: 5%;
+                z-index: 10;
+            }
+            
+            .row{                
+                display:flex;
+                margin-top: 5em;
+            }
 
+            .fig{
+                width:fit-content;
+                text-align: center;
+                transition: transform .2s;
+                margin: 0 2.5%;
             }
-            .sec p
-            {
-                font-size:1em;
-                color:#fff;
+            .figg{
+                border-radius: 30px;
+                border: 3px solid;
+                border-radius:30px;
+                box-shadow:0 20px 35px rgba(0, 0, 0, 1);
             }
+            .product{
+                width:100%;
+                height:100%;
+                margin-bottom: 100px;
+            }
+            
 
+            .fig:hover {
+            transform: scale(1.5); 
+            }
+            figcaption{
+                align-items: center;
+                color: white;
+                font-family:sans-serif;
+                font-size: larger;
+            }
         </style>
         </head>
         <body>
@@ -179,46 +261,110 @@
         </header>
         <section>
             <img src="stars.png" id="stars">
-            <!-- <img src="moon.png" id="moon"> -->
-            <img src="mountains_behind.png" id="mountains_behind">
+            <img style="opacity: 1;"src="mountains_behind.png" id="mountains_behind">
             <h2 id="text" >NEBULA</h2>
             <button id="btn">Let's Get Started</button>
-            <!-- <img src="mountains_front.png" id="mountains_front"> -->
         </section>
-        <div class="sec">
-            <h5>About NEBULA</h5>
-            <p>Nebula is a dynamic startup registered as an MSME in August 2023. Our core innovation lies in creating AI QR codes that can be seamlessly printed on t-shirts. These QR codes are more than just technical; they enable interaction with a single tap scan, making them ideal for college clubs, marathons, basketball teams, and various other groups. Nebula's primary goal is to replace traditional ID cards with our innovative QR code system.<br>
-
-                Upon scanning the QR code, users gain access to a personalized dashboard featuring information such as names, Instagram bios, and team roles. Additionally, our platform offers a shopping page where customers can explore and purchase a wide range of t-shirt categories, including hoodies, oversized, and polo shirts. While our services cater to a diverse audience, our primary focus is on providing a valuable solution to college clubs.<br>
-                
-                Moreover, we offer customization options for the backside of the t-shirts, allowing clubs and teams to display their names or other relevant information. Join Nebula, and be part of a pioneering venture that's redefining the way people interact and identify themselves in various group settings<br></p>
-            <u><h2><u>Core Members of Nebula!</u></h2></u>
-            <h2>Sai Murali<br></h2>
-            <h2>Mohammad Ismail<br></h2>
-            <h2>Bhargav Pattanayak<br></h2>
-            <h2>Krishna Teja<br></h2>
-            <h2>Lokesh<br></h2>
+        <h2 style="background-color: white; text-align: center;">WINTER SALE!</h2>
+        <hr style="background-color: #1c0522; height:50px;">
+        
+        <div class="slider">
+            <div class="list">
+                <div class="item">
+                    <img src="Banner_01.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="Banner_02.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="Banner_03.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="Banner_04.jpg" alt="">
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="prev"><</button>
+                <button id="next">></button>
+            </div>
+            <ul class="dots">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
         </div>
+        <hr style="background-color: #1c0522; height:50px;">
+        <div class="product" >
+            <h2 style="background-color: white; text-align: center;">Our winter Collection</h2>
+        <div class="row">
+            <div class="fig">
+                <img class="figg" src="black.jpg" width="300px" height="200px">
+                <figcaption>White T-shirt</figcaption>
+            </div>
+            
+            <div class="fig">
+                <img class="figg" src="blackPant.jpg" width="300px" height="200px">
+                <figcaption>BlackPant</figcaption>
+            </div> 
+
+            <div class="fig">
+                <img class="figg" src="hoodie.jpg" width="300px" height="200px">
+                <figcaption>Hoodie</figcaption>
+            </div> 
+            <div class="fig">
+                <img class="figg" src="oversized.jpeg" width="300px" height="200px">
+                <figcaption>Oversized</figcaption>
+            </div>
+        </div>
+    </div>
         <script>
             let stars = document.getElementById('stars');
-            let moon = document.getElementById('moon');
-            let mountains_behind = document.getElementById('mountains_behind');
-            let text = document.getElementById('text');
-            let btn = document.getElementById('btn');
-            let mountains_front = document.getElementById('mountains_front');
-            let header = document.querySelector('header');
+            
             window.addEventListener('scroll',function(){
 
             let value = window.scrollY;
             stars.style.left = value *0.25 + 'px';
-            moon.style.top = value *1.05 + 'px';
-            mountains_behind.style.top = value *0.5 + 'px';
-            mountains_front.style.top = value *0 + 'px';
-            text.style.marginRight = value *3 + 'px';
-            text.style.marginTop = value *1.5 + 'px';
-            btn.style.marginTop= value *1.5 + 'px';
-            header.style.top = value*0.5 +'px';
             });
+            let slider = document.querySelector('.slider .list');
+            let items = document.querySelectorAll('.slider .list .item');
+            let next = document.getElementById('next');
+            let prev = document.getElementById('prev');
+            let dots = document.querySelectorAll('.slider .dots li');
+
+            let lengthItems = items.length - 1;
+            let active = 0;
+            next.onclick = function(){
+                active = active + 1 <= lengthItems ? active + 1 : 0;
+                reloadSlider();
+            }
+            prev.onclick = function(){
+                active = active - 1 >= 0 ? active - 1 : lengthItems;
+                reloadSlider();
+            }
+            let refreshInterval = setInterval(()=> {next.click()}, 3000);
+            function reloadSlider(){
+                slider.style.left = -items[active].offsetLeft + 'px';
+                // 
+                let last_active_dot = document.querySelector('.slider .dots li.active');
+                last_active_dot.classList.remove('active');
+                dots[active].classList.add('active');
+
+                clearInterval(refreshInterval);
+                refreshInterval = setInterval(()=> {next.click()}, 3000);
+
+                
+            }
+
+            dots.forEach((li, key) => {
+                li.addEventListener('click', ()=>{
+                    active = key;
+                    reloadSlider();
+                })
+            })
+            window.onresize = function(event) {
+                reloadSlider();
+            };
         </script>
         </body>
     </html>
