@@ -17,13 +17,12 @@
             body
             {
                 min-height:100vh;
-                background: url("stars.png"), linear-gradient(#2b1055,#7597de);
                 background-attachment: fixed;
                 background-size: cover;
                 overflow-x:hidden;
                 
             }
-            header
+            header:not([class="shop"])
             {
                 position:absolute;
                 top:0;
@@ -33,7 +32,28 @@
                 display:flex;
                 justify-content: space-between;
                 align-items:center ;
-
+                background:linear-gradient(#2b1055,#2b1055);
+            }
+            .shop
+            {
+                position:absolute;
+                top:0;
+                left:0;
+                width:100%;
+                padding: 30px 100px;
+                display:flex;
+                justify-content: space-between;
+                align-items:center ;
+            }
+            .shop a:hover 
+            {
+                background-color: #2b1055;
+                color:#fff;
+            }
+            .shop a {
+                text-decoration: none;
+                padding:6px 15px;
+                font-weight: bolder;
             }
             header .logo
             {
@@ -43,7 +63,7 @@
                 font-size:2em;
                 text-transform:uppercase;
                 letter-spacing:2px;
-
+                
             }
             header ul
             {
@@ -58,27 +78,19 @@
                 margin-left:20px;
 
             }
-            header ul li a
+            header ul li a:not(.shop ul li a)
             {
                 text-decoration:none;
                 padding:6px 15px;
-                color: #fff;
+                color:#fff;
                 
             }
-            header ul li a:hover
+            header ul li a:hover 
             {
-                background:#fff;
-                color:#2b1055;
+                background:black;
+                color:black;
                 border-radius:20px;
-            }
-            header ul li a.hover,
-            header ul li a.active
-            {
-                background:#fff;
-                color:#2b1055;
-                border-radius: 20px;
-            }
-
+            } 
             section
             {
                 position:relative;
@@ -114,7 +126,7 @@
             #text
             {
                 position:absolute;
-                color:#fff;
+                color:#000;
                 white-space:nowrap;
                 font-size:7.5vw;
                 /* right:-300px; */
@@ -160,7 +172,7 @@
             .sec p
             {
                 font-size:1em;
-                color:#fff;
+                color:#000;
             }
 
             /*SHOP*/
@@ -169,6 +181,7 @@
                 position: relative;
                 top:5em;
                 z-index:0;
+                
             }
             .shop li{
                 margin: px 10%;
@@ -189,6 +202,7 @@
                 text-align: center;
                 transition: transform .2s;
                 margin: 0 2.5%;
+                
             }
             img{
                 border-radius: 30px;
@@ -208,11 +222,16 @@
             }
             figcaption{
                 align-items: center;
-                color: white;
+                color: #000;
                 font-family:sans-serif;
                 font-size: larger;
             }
-
+            .figg{
+                border-radius: 30px;
+                border: 3px solid;
+                border-radius:30px;
+                box-shadow:0 20px 35px rgba(0, 0, 0.5, 0.5);
+            }
         
         </style>
         </head>
@@ -245,21 +264,21 @@
 
             <div class="row">
                 <div class="fig">
-                    <img src="black.jpg" width="300px" height="200px">
+                    <img class="figg"src="black.jpg" width="300px" height="200px">
                     <figcaption>White T-shirt</figcaption>
                 </div>
                 
                 <div class="fig">
-                    <img src="blackPant.jpg" width="300px" height="200px">
+                    <img class="figg"src="blackPant.jpg" width="300px" height="200px">
                     <figcaption>BlackPant</figcaption>
                 </div> 
 
                 <div class="fig">
-                    <img src="hoodie.jpg" width="300px" height="200px">
+                    <img class="figg"src="hoodie.jpg" width="300px" height="200px">
                     <figcaption>Hoodie</figcaption>
                 </div> 
                 <div class="fig">
-                    <img src="oversized.jpeg" width="300px" height="200px">
+                    <img class="figg"src="oversized.jpeg" width="300px" height="200px">
                     <figcaption>Oversized</figcaption>
                 </div> 
             </div>
@@ -269,21 +288,21 @@
 
             <div class="row">
                 <div class="fig">
-                    <img src="black.jpg" width="300px" height="200px">
+                    <img class="figg"src="black.jpg" width="300px" height="200px">
                     <figcaption>White T-shirt</figcaption>
                 </div>
                 
                 <div class="fig">
-                    <img src="blackPant.jpg" width="300px" height="200px">
+                    <img class="figg"src="blackPant.jpg" width="300px" height="200px">
                     <figcaption>BlackPant</figcaption>
                 </div> 
 
                 <div class="fig">
-                    <img src="hoodie.jpg" width="300px" height="200px">
+                    <img class="figg"src="hoodie.jpg" width="300px" height="200px">
                     <figcaption>Hoodie</figcaption>
                 </div> 
                 <div class="fig">
-                    <img src="oversized.jpeg" width="300px" height="200px">
+                    <img class="figg"src="oversized.jpeg" width="300px" height="200px">
                     <figcaption>Oversized</figcaption>
                 </div> 
             </div>
@@ -293,21 +312,21 @@
 
             <div class="row">
                 <div class="fig">
-                    <img src="black.jpg" width="300px" height="200px">
+                    <img class="figg"src="black.jpg" width="300px" height="200px">
                     <figcaption>White T-shirt</figcaption>
                 </div>
                 
                 <div class="fig">
-                    <img src="blackPant.jpg" width="300px" height="200px">
+                    <img class="figg"src="blackPant.jpg" width="300px" height="200px">
                     <figcaption>BlackPant</figcaption>
                 </div> 
 
                 <div class="fig">
-                    <img src="hoodie.jpg" width="300px" height="200px">
+                    <img class="figg"src="hoodie.jpg" width="300px" height="200px">
                     <figcaption>Hoodie</figcaption>
                 </div> 
                 <div class="fig">
-                    <img src="oversized.jpeg" width="300px" height="200px">
+                    <img class="figg"src="oversized.jpeg" width="300px" height="200px">
                     <figcaption>Oversized</figcaption>
                 </div> 
             </div>
