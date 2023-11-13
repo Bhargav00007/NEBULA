@@ -1,9 +1,9 @@
-<!-- HELLO WORLD -->
 <!DOCTYPE html>
     <html>
         <head>
         <title>Nebula</title>
         <link rel="stylesheet" href="master.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
         <style type="text/css">
             *
             {
@@ -136,15 +136,15 @@
             #btn:hover
             {
                 background-color:transparent;
-                border:1px solid #2b1055;
+                border:2px  solid #2b1055;
+
             }
             #oversizedd{
                 position:relative;
                 width:400px;
                 height:800px;
-                top:80px;
+                top:120px;
                 left:100px;
-                opacity: 1;
             }
 
             /* -----------------------Slider division-------------------------- */
@@ -217,6 +217,7 @@
                     height: 400px;
                 }
             }
+            /* ---------------------------SHOPPING---------------------------------- */
             .item{
                 width:2000px;
                 height:300px;
@@ -234,14 +235,11 @@
             .fig{
                 width:fit-content;
                 text-align: center;
-                transition: transform .2s;
                 margin: 0 2.5%;
             }
             .figg{
-                border-radius: 30px;
-                border: 3px solid;
-                border-radius:30px;
-                box-shadow:0 20px 35px rgba(0, 0, 0, 1);
+                border-radius: 10px;
+                border: 1px solid;  
             }
             .product{
                 width:100%;
@@ -250,8 +248,9 @@
             }
             
 
-            .fig:hover {
-            transform: scale(1.5); 
+            .figg:hover {
+            border-radius: 10px;
+            box-shadow:0 20px 35px rgba(0, 0, 0, 0.5);
             }
             figcaption{
                 align-items: center;
@@ -259,18 +258,81 @@
                 font-family:sans-serif;
                 font-size: larger;
             }
-
+            .box{
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+            left:200px;
+            }
+            .box .search-box{
+            position: relative;
+            height: 30px;
+            max-width: 30px;
+            margin: auto;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            }
+            #check:checked ~ .search-box{
+            max-width: 380px;
+            left:0;
+            }
+            .search-box input{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            border-radius: 25px;
+            background: #fff;
+            outline: none;
+            border: none;
+            padding-left: 20px;
+            font-size: 18px;
+            left:0;
+            }
+            .search-box .icon{
+            position: absolute;
+            right: -2px;
+            top: 0;
+            width: 30px;
+            background: #FFF;
+            height: 100%;
+            text-align: center;
+            line-height: 30px;
+            color: #FF676D;
+            font-size: 20px;
+            border-radius: 25px;
+            }
+            #check:checked ~ .search-box .icon{
+            background: #FF676D;
+            color: #FFF;
+            width: 60px;
+            border-radius: 0 25px 25px 0;
+            }
+            #check{
+            display: none;
+            }
         </style>
         </head>
         <body>
         <header>
+            
             <a href="#" class="logo">Nebula</a>
+            <div class="box" style="z-index: 100000;">
+                <input type="checkbox" id="check">
+                <div class="search-box">
+                  <input type="text" placeholder="Type here...">
+                  <label for="check" class="icon">
+                    <i class="fas fa-search"></i>
+                  </label>
+                </div>
+              </div>
             <ul>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="NebulaShop.html">Shop</a></li>
                 <li><a href="nebulacontact.html">Contact</a></li>
             </ul>
+            
         </header>
         <section>
             <img src="stars.png" id="stars">
@@ -385,7 +447,6 @@
                 reloadSlider();
             };
         </script>
-        //aditya maddila has invaded the //
         </body>
     </html>
 </DOCTYPE>
