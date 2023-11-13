@@ -200,14 +200,13 @@
             .fig{
                 width:fit-content;
                 text-align: center;
-                transition: transform .2s;
                 margin: 0 2.5%;
                 
             }
             img{
                 border-radius: 30px;
-                border: 3px solid;
-                border-radius:30px;
+                border: 1px solid;
+                border-radius:0px;
                 
                 
             }
@@ -217,8 +216,8 @@
             }
             
 
-            .fig:hover {
-            transform: scale(1.5); 
+            .figg:hover { 
+            box-shadow:0 20px 35px rgba(0, 0, 0.5, 0.5);
             }
             figcaption{
                 align-items: center;
@@ -227,10 +226,9 @@
                 font-size: larger;
             }
             .figg{
-                border-radius: 30px;
-                border: 3px solid;
-                border-radius:30px;
-                box-shadow:0 20px 35px rgba(0, 0, 0.5, 0.5);
+                border: 1px solid;
+                border-radius:10px;
+
             }
             /* -----------------------Slider division-------------------------- */
             .slider{
@@ -453,7 +451,7 @@
                 active = active - 1 >= 0 ? active - 1 : lengthItems;
                 reloadSlider();
             }
-            let refreshInterval = setInterval(()=> {next.click()}, 7000);
+            let refreshInterval = setInterval(()=> {next.click()}, 10000);
             function reloadSlider(){
                 slider.style.left = -items[active].offsetLeft + 'px';
                 // 
@@ -462,7 +460,7 @@
                 dots[active].classList.add('active');
 
                 clearInterval(refreshInterval);
-                refreshInterval = setInterval(()=> {next.click()}, 3000);
+                refreshInterval = setInterval(()=> {next.click()}, 10000);
 
                 
             }
