@@ -8,3 +8,6 @@ visit here:https://bhargav00007.github.io/NEBULA/
 -HTML
 -CSS
 -Javascript
+
+# about
+Clothing brand 
