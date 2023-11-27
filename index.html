@@ -4,7 +4,9 @@
         <title>Nebula</title>
         <link rel="stylesheet" href="master.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <style type="text/css">
+            @import url('https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans:600&display=swap');
             *
             {
                 margin:0;
@@ -12,6 +14,7 @@
                 box-sizing: border-box;
                 font-family:'poppins', sans-serif;
                 scroll-behavior:smooth;
+                text-decoration: none;
             }
             body
             {
@@ -25,7 +28,7 @@
                 top:0;
                 left:0;
                 width:100%;
-                padding: 30px 100px;
+                padding: 30px 50px;
                 display:flex;
                 justify-content: space-between;
                 align-items:center ;
@@ -58,7 +61,7 @@
             header ul li
             {
                 list-style:none;
-                margin-left:20px;
+                margin-left:10px;
 
             }
             header ul li a
@@ -66,6 +69,21 @@
                 text-decoration:none;
                 padding:6px 15px;
                 color: #fff;
+                
+            }
+            header ul li a .profile
+            {
+                text-decoration:none;
+                color: #fff;
+                font-size: 23px;
+
+                
+            }
+            header ul li a .profile:hover
+            {
+                background:#fff;
+                color:#2b1055;
+                border-radius:0px;
                 
             }
             header ul li a:hover
@@ -311,6 +329,7 @@
             #check{
             display: none;
             }
+            
         </style>
         </head>
         <body>
@@ -331,6 +350,8 @@
                 <li><a href="#">About</a></li>
                 <li><a href="NebulaShop.html">Shop</a></li>
                 <li><a href="nebulacontact.html">Contact</a></li>
+                <li><a href="nebuladashboard.html" ><i class='bx bx-user-circle profile'></i></a></li>
+
             </ul>
             
         </header>
@@ -399,6 +420,7 @@
             </div>
         </div>
     </div>
+    
         <script>
             let stars = document.getElementById('stars');
             
@@ -432,7 +454,7 @@
                 dots[active].classList.add('active');
 
                 clearInterval(refreshInterval);
-                refreshInterval = setInterval(()=> {next.click()}, 3000);
+                refreshInterval = setInterval(()=> {next.click()}, 10000);
 
                 
             }
