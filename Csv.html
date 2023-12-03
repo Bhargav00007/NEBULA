@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Shirt Order Form</title>
+    <style>
+        *
+        {
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior:smooth;
+        }
+        body
+        {
+            min-height:100vh;
+            background: linear-gradient(lightblue,#fff);
+            overflow-x:hidden;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        h1{
+            display:flex;
+            position: relative;
+            justify-content: center;
+            text-align: center;
+            font-size: 2.4rem;
+            padding:2rem;
+        }
+        .inputz{
+            position:relative;
+            text-align: center;
+            font-size: 30px;
+            border-radius: 20px;
+        }
+        .btn{
+            margin: 20px;
+            height:70px;
+            width:150px;
+            border-radius: 20px;
+            box-shadow:0 20px 35px rgba(0, 0, 0, 0.5);
+            background-color: orange;
+            font-size: 30px;
+        }
+        .number{
+            height:50px;
+            width:100px;
+            box-shadow:0 20px 35px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            size: 50px;
+            text-align: center;
+            font-size: xx-large;
+        }
+
+        /* backend changes to ENTERING DISPLAY DETAILS */
+        .display{
+            width: 25rem;
+            margin: 0.4rem;
+            box-shadow:0 20px 35px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            text-align: center;
+            font-size: xx-large;
+        }
+        .deets{
+            width: 25rem;
+            margin: 0.4rem;
+        }
+        header .logo
+        {
+            color: #fff;
+            font-weight:700px;
+            text-decoration:none;
+            font-size:2em;
+            text-transform:uppercase;
+            letter-spacing:2px;
+            
+        }
+        header ul
+        {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            z-index:10000;
+        }
+        header ul li
+        {
+            list-style:none;
+            margin-left:20p
+        }
+        header ul li a:not(.shop ul li a)
+        {
+            text-decoration:none;
+            padding:6px 15px;
+            color:#fff;
+            
+        }
+        header ul li a:hover 
+        {
+            background:black;
+            color:white;
+            border-radius:20px;
+        }
+        header:not([class="shop"])
+        {
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            padding: 30px 100px;
+            display:flex;
+            justify-content: space-between;
+            align-items:center ;
+            background:linear-gradient(#2b1055,#2b1055);
+        } 
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">Nebula</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="NebulaShop.html">Shop</a></li>
+            <li><a href="nebulacontact.html">Contact</a></li>
+        </ul>
+        
+      </header>
+    <h1>BULKY BUY</h1>
+    <hr style="height:7px; background-color:black">
+
+    <h2 style="text-align: center; margin: 20px;">Buy products for your friends,family and teams!</h2>
+    <form name="user-order"  action="/order" method="post" >
+        
+    
+        <div class="inputz">
+            <div class="csv">
+                Upload CSV File of Tshirt display data: <input type="file" name="csvFile" accept=".csv" style="text-decoration: none;" placeholder="CSV">
+                </div>
+                <button type="button" class="btn">Proceed</button>
+                <hr style="height:7px; background-color:black">
+        <label for="quantity">Enter the number of T-shirts:</label>        
+        <input class="number" type="number" id="quantity" min="1">
+        <label for="quantity">Enter the fields to display inside T-shirt QR:</label>        
+        <input type="text" class="display"><br>
+        <input type="text" class="display"><br>
+        <input type="text" class="display"><br>
+        <input type="text" class="display">
+        <br><button type="button" class="addFields btn" style="font-size: 2rem; width:auto; height:auto; padding:0.07rem 0.6rem;" onclick="handleAddFields()">+</button>
+
+
+
+        <br><button type="button" class="btn" onclick="generateInputs()">BUY NOW</button>
+
+    </div>
+    </form>
+    
+    <script>
+        function handleAddFields(){
+            let container = document.querySelector('.inputz');
+            let addButton = document.querySelector(".addFields");
+            for (let i = 1; i <3; i++) {
+                var br= document.createElement('br');
+                var detail= document.createElement('input');
+                detail.className="display";  
+
+                addButton.previousSibling.before(br);
+                addButton.previousSibling.before(detail);
+            }
+        }
+
+        function generateInputs() {
+            var deetList = document.getElementsByClassName("display");
+            var deetOn=[];
+            for (i=0;i<deetList.length;i++){
+                if (deetList[i].value != ''){
+            deetOn.push(deetList[i].value);
+                }
+        }
+        console.log(deetOn);
+
+
+            const quantity = document.getElementById('quantity').value;
+            let container = document.querySelector('.inputz');
+            container.innerHTML = '';
+            for (let i = 1; i <= quantity; i++) {
+                const label = document.createElement('label');
+                label.textContent = `Details for T-shirt #${i}:`;
+                container.appendChild(label);
+
+                for (let j=0;j<deetOn.length;j++){
+                    var label2 = document.createElement("label");
+                    label2.innerHTML=`${j+1}. ${deetOn[j]}:`;
+
+                    var input = document.createElement('input');
+                    input.type = 'text';
+                    input.name = `${deetOn[j]}`;
+                    input.className="deets"
+
+                    container.append(label2,input,document.createElement("br"))
+                    
+                }container.appendChild(document.createElement("br"))
+                           
+            }
+                let button = document.createElement("input");
+                button.type="submit";
+                button.value="Submit";
+                button.className= "btn";
+                
+                container.appendChild(document.createElement("br"));
+                container.appendChild(button);
+        }
+    </script>
+</body>
+</html>
