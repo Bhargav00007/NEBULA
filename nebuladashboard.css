@@ -1,91 +1,90 @@
 html,
 *
-           {
-                margin:0;
-                padding:0;
-                box-sizing: border-box;
-                font-family:'poppins', sans-serif;
-                scroll-behavior:smooth;
-               
-            }
-            body
-            {
-                min-height:100vh;
-                background-attachment: fixed;
-                background-size: cover;
-                overflow-x:hidden;
-                
-            }
-            header:not([class="shop"])
-            {
-                position:absolute;
-                top:0;
-                left:0;
-                width:100%;
-                padding: 30px 100px;
-                display:flex;
-                justify-content: space-between;
-                align-items:center ;
-                background:linear-gradient(#2b1055,#2b1055);
-            }
-            .shop
-            {
-                position:absolute;
-                top:0;
-                left:0;
-                width:100%;
-                padding: 30px 100px;
-                display:flex;
-                justify-content: space-between;
-                align-items:center ;
-            }
-            .shop a:hover 
-            {
-                background-color: #2b1055;
-                color:#fff;
-            }
-            .shop a {
-                text-decoration: none;
-                padding:6px 15px;
-                font-weight: bolder;
-            }
-            header .logo
-            {
-                color: #fff;
-                font-weight:700px;
-                text-decoration:none;
-                font-size:2em;
-                text-transform:uppercase;
-                letter-spacing:2px;
-                
-            }
-            header ul
-            {
-                display:flex;
-                justify-content:center;
-                align-items:center;
-                z-index:10000;
-            }
-            header ul li
-            {
-                list-style:none;
-                margin-left:20px;
-
-            }
-            header ul li a:not(.shop ul li a)
-            {
-                text-decoration:none;
-                padding:6px 15px;
-                color:#fff;
-                
-            }
-            header ul li a:hover 
-            {
-                background:black;
-                color:white;
-                border-radius:20px;
-            } 
-            /* ----------------------------dashboard---------------------------------- */
+{
+     margin:0;
+     padding:0;
+     box-sizing: border-box;
+     font-family:'poppins', sans-serif;
+     scroll-behavior:smooth;
+    
+ }
+ body
+ {
+     min-height:100vh;
+     background-attachment: fixed;
+     background-size: cover;
+     overflow-x:hidden;
+     
+ }
+ header:not([class="shop"])
+ {
+     position:absolute;
+     top:0;
+     left:0;
+     width:100%;
+     padding: 30px 100px;
+     display:flex;
+     justify-content: space-between;
+     align-items:center ;
+     background:linear-gradient(#2b1055,#2b1055);
+ }
+ .shop
+ {
+     position:absolute;
+     top:0;
+     left:0;
+     width:100%;
+     padding: 30px 100px;
+     display:flex;
+     justify-content: space-between;
+     align-items:center ;
+ }
+ .shop a:hover 
+ {
+     background-color: #2b1055;
+     color:#fff;
+ }
+ .shop a {
+     text-decoration: none;
+     padding:6px 15px;
+     font-weight: bolder;
+ }
+ header .logo
+ {
+     color: #fff;
+     font-weight:700px;
+     text-decoration:none;
+     font-size:2em;
+     text-transform:uppercase;
+     letter-spacing:2px;
+     
+ }
+ header ul
+ {
+     display:flex;
+     justify-content:center;
+     align-items:center;
+     z-index:10000;
+ }
+ header ul li
+ {
+     list-style:none;
+     margin-left:20p
+ }
+ header ul li a:not(.shop ul li a)
+ {
+     text-decoration:none;
+     padding:6px 15px;
+     color:#fff;
+     
+ }
+ header ul li a:hover 
+ {
+     background:black;
+     color:white;
+     border-radius:20px;
+ } 
+ /* ----------------------------dashboard---------------------------------- */
 body {
   padding: 0;
   margin: 0;
@@ -232,12 +231,13 @@ body {
 #projects {
   grid-row: 2/3;
   grid-column: 1/2;
-  display: grid;
-  gap: 30px;
+  /* display: grid; */
+  margin:50px;
   grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
   grid-auto-rows: minmax(20vh, 1fr);
-  padding-left: 20px;
+  
   min-height: 100vh;
+  
 }
 
 .card {
@@ -322,4 +322,7 @@ border-radius: 5%;
 .gay{
   text-decoration: none;
   color: #fff;
+}
+.gay:hover{
+  color:black;
 }
