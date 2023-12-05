@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Review Us :)</title>
+        <style>
+        *
+        {
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior:smooth;
+        }
+        body
+        {
+            min-height:100vh;
+            background: linear-gradient(lightblue,#fff);
+            overflow-x:hidden;
+        }
+        header .logo
+        {
+            color: #fff;
+            font-weight:700px;
+            text-decoration:none;
+            font-size:2em;
+            text-transform:uppercase;
+            letter-spacing:2px;
+            
+        }
+        header ul
+        {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            z-index:10000;
+        }
+        header ul li
+        {
+            list-style:none;
+            margin-left:20p
+        }
+        header ul li a:not(.shop ul li a)
+        {
+            text-decoration:none;
+            padding:6px 15px;
+            color:#fff;
+            
+        }
+        header ul li a:hover 
+        {
+            background:black;
+            color:white;
+            border-radius:20px;
+        }
+        header:not([class="shop"])
+        {
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            padding: 30px 100px;
+            display:flex;
+            justify-content: space-between;
+            align-items:center ;
+            background:linear-gradient(#2b1055,#2b1055);
+        } 
+        .wrapper {
+          height:100vh;
+          display:grid;
+            
+          place-items:center;
+        }
+        .typing{
+          width: 9ch;
+          animation: typing 3s steps(9), blink .5s step-end infinite alternate;
+          white-space: nowrap;
+          overflow: hidden;
+          border-right: 3px solid;
+          font-family: monospace;
+          font-size: 2em;
+        }
+
+        @keyframes typing {
+          from {
+            width: 0
+          }
+        }
+
+        @keyframes blink {
+          50% {
+            border-color: transparent
+          }
+        }
+        .btn{
+            position: relative;
+            right:50px;
+            bottom:-50px;
+            height:50px;
+            width:100px;
+            border-radius: 20px;
+            box-shadow:0 20px 35px rgba(0, 0, 0, 0.5);
+            background-color: orange;
+            font-size: 20px;
+        }
+        
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">Nebula</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="NebulaShop.html">Shop</a></li>
+                <li><a href="nebulacontact.html">Contact</a></li>
+            </ul>
+            
+          </header>
+          <div class="wrapper">
+            <div class="typing">
+              Review Us 
+            </div>
+        
+            <form id="review" style="align-items: center; justify-content: center;">
+            <textarea  col="500" form="review" row="50" maxlength="580" style="resize:none; border-radius: 10px; font-size: large; width:700px; height:200px;" ></textarea>
+            <input type="submit" class="btn">
+            </form>
+        </div>
+    </body>
+</html>
