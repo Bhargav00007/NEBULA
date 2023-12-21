@@ -11,3 +11,4 @@ visit here:https://bhargav00007.github.io/NEBULA/
 
 # about
 Clothing brand 
+QR code T-shirts
